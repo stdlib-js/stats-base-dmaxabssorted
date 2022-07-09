@@ -30,30 +30,38 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/stats-base-dmaxabssorted
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var dmaxabssorted = require( '@stdlib/stats-base-dmaxabssorted' );
+dmaxabssorted = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dmaxabssorted@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var dmaxabssorted = require( 'path/to/vendor/umd/stats-base-dmaxabssorted/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dmaxabssorted@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.dmaxabssorted;
+})();
+</script>
 ```
 
 #### dmaxabssorted( N, x, stride )
@@ -158,9 +166,14 @@ var v = dmaxabssorted.ndarray( N, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var Float64Array = require( '@stdlib/array-float64' );
-var dmaxabssorted = require( '@stdlib/stats-base-dmaxabssorted' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dmaxabssorted@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 var x;
 var i;
@@ -173,6 +186,11 @@ console.log( x );
 
 var v = dmaxabssorted( x.length, x, 1 );
 console.log( v );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -264,17 +282,17 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/stats-base-dmaxabssorted/main/LICENSE
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/umd
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dmaxabs]: https://github.com/stdlib-js/stats-base-dmaxabs
+[@stdlib/stats/base/dmaxabs]: https://github.com/stdlib-js/stats-base-dmaxabs/tree/umd
 
-[@stdlib/stats/base/dmaxsorted]: https://github.com/stdlib-js/stats-base-dmaxsorted
+[@stdlib/stats/base/dmaxsorted]: https://github.com/stdlib-js/stats-base-dmaxsorted/tree/umd
 
-[@stdlib/stats/base/smaxabssorted]: https://github.com/stdlib-js/stats-base-smaxabssorted
+[@stdlib/stats/base/smaxabssorted]: https://github.com/stdlib-js/stats-base-smaxabssorted/tree/umd
 
 <!-- </related-links> -->
 
